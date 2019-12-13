@@ -1,0 +1,44 @@
+<% @posts.each_with_index do |post, i| %>
+    <div class="post-preview">
+        <% if (Time.now - 3.week > post.published_at) %>
+            <div class="alert alert-warning">
+                Este post tiene más de 3 semanas de antiguedad, es probable que esté desactualizado.
+            </div>
+        <% end %>
+        <a href="#">
+            <h2 class="post-title">
+                <%= post.title %>
+            </h2>
+        </a>
+        <h3 class="post-subtitle">
+            <%= post.content %>
+        </h3>
+
+        <div class="post-meta d-flex justify-content-between">
+            <p>
+                Publicado <%= post.author.present? ? "por #{post.author}" : '' %> <%= post.published_at.strftime('el %d de %B del %Y') %>
+            <p>
+
+            <% 
+                badge_color = case post.likes
+                    when 1..10
+                    'info'
+                    when 11..20
+                    'success'
+                    when 21..30
+                    'primary'
+                    else
+                    'secondary'
+                end
+            %>
+
+            <span class="badge badge-pill badge-<%= badge_color %>">
+                <%= post.likes %>
+            </span>
+        </div>
+    </div>
+
+    <% unless @posts.size - 1 == i %>
+        <hr>
+    <% end %>
+<% end %>

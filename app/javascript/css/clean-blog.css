@@ -267,7 +267,10 @@
       font-size: 30px;
     }
   }
-  
+  .post-preview {
+      margin-bottom: 40px;
+  }
+
   .post-preview > a {
     color: #212529;
   }
