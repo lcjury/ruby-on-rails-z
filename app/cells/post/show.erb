@@ -1,0 +1,23 @@
+<div class="post-preview">
+    <% if deprecated? %>
+        <div class="alert alert-warning">
+            Este post tiene más de 3 semanas de antiguedad, es probable que esté desactualizado.
+        </div>
+    <% end %>
+    <a href="#">
+        <h2 class="post-title">
+            <%= title %>
+        </h2>
+    </a>
+    <h3 class="post-subtitle">
+        <%= content %>
+    </h3>
+
+    <div class="post-meta d-flex justify-content-between">
+        <p>
+            Publicado <%= author_meta %> <%= date_meta %>
+        <p>
+
+        <span class="badge badge-pill badge-<%= likes_badge_color %>"><%= likes %></span>
+    </div>
+</div>

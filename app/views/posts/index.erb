@@ -1,29 +1,7 @@
 <% @posts.each_with_index do |post, i| %>
-    <div class="post-preview">
-        <% if deprecated? post %>
-            <div class="alert alert-warning">
-                Este post tiene más de 3 semanas de antiguedad, es probable que esté desactualizado.
-            </div>
-        <% end %>
-        <a href="#">
-            <h2 class="post-title">
-                <%= post.title %>
-            </h2>
-        </a>
-        <h3 class="post-subtitle">
-            <%= post.content %>
-        </h3>
+    <%= cell('post', post) %>
 
-        <div class="post-meta d-flex justify-content-between">
-            <p>
-                Publicado <%= author_meta post %> <%= date_meta post %>
-            <p>
-
-            <span class="badge badge-pill badge-<%= likes_badge_color(post) %>"><%= post.likes %></span>
-        </div>
-    </div>
-
-    <% unless last_post? @posts, i %>
+     <% unless last_post? @posts, i %>
         <hr>
     <% end %>
 <% end %>
