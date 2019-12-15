@@ -27,4 +27,8 @@ class PostCell < Cell::ViewModel
       'secondary'
     end
   end
+
+  def last?
+    options[:'last?']
+  end
 end

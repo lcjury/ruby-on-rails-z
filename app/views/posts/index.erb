@@ -1,7 +1,3 @@
 <% @posts.each_with_index do |post, i| %>
-    <%= cell('post', post) %>
-
-     <% unless last_post? @posts, i %>
-        <hr>
-    <% end %>
+    <%= cell('post', post, 'last?': last_post?(@posts, i)) %>
 <% end %>
