@@ -1,4 +1,4 @@
-class PostCell < Cell::ViewModel
+class Post::ShowCell < Cell::ViewModel
   include ::Cell::Erb
 
   property :title, :likes, :content

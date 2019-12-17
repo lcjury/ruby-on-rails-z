@@ -1,0 +1,3 @@
+<% model.each_with_index do |post, i| %>
+    <%= cell('post/show', post, 'last?': last_post?(i)) %>
+<% end %>

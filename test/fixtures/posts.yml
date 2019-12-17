@@ -4,8 +4,11 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one: {
+    title: 'hola mundo',
+    content: '',
+    published_at: '2019-12-14 23:34:45 -0300'
+}
 # column: value
 #
-two: {}
 # column: value
